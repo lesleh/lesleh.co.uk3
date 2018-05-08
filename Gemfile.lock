@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/simplybusiness/packer.git
-  revision: c0b991837a17e54df2db7536bbb25333a9a6840e
+  revision: 5f1fa714b3868f6b4f8c6beeff6018fd10b0ad44
   specs:
     packer (0.2.1)
       activesupport (~> 5)
