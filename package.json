@@ -9,6 +9,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "js-yaml": "^3.11.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",

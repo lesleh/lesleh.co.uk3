@@ -38,6 +38,10 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /\/node_modules\//,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(jpe?g|gif|svg|png)$/,
+        loader: 'file-loader'
       }
     ]
   },

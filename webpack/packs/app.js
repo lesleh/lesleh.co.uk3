@@ -1,1 +1,1 @@
-console.log('Packer is working')
+import '../javascripts/layout/menu'
