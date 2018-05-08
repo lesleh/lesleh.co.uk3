@@ -1,6 +1,9 @@
 {
   "name": "lesleh_co_uk3",
   "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --mode development"
+  },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -16,5 +19,8 @@
   },
   "version": "1.0.0",
   "author": "Leslie Hoare <iam@lesleh.co.uk>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.4"
+  }
 }

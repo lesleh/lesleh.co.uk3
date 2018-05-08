@@ -21,6 +21,9 @@ module.exports = {
     path: path.join(__dirname, config.public_path, config.public_output_path),
     publicPath: `/${config.public_output_path}/`
   },
+  devServer: {
+    port: 3035
+  },
   module: {
     rules: [
       {
