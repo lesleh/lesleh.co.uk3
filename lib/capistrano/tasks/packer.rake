@@ -6,3 +6,5 @@ task :packer_precompile do
     end
   end
 end
+
+after 'yarn:install', :packer_precompile
