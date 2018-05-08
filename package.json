@@ -1,5 +1,8 @@
 {
   "name": "lesleh_co_uk3",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0",
+  "author": "Leslie Hoare <iam@lesleh.co.uk>",
+  "license": "MIT"
 }
