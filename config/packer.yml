@@ -1,0 +1,23 @@
+# Note: You must restart bin/webpack-dev-server for changes to take effect
+
+default: &default
+  source_path: webpack
+  source_entry_path: packs
+  public_path: public
+  public_output_path: packs
+  cache_path: tmp/cache/packer
+  compile: true
+
+  # Reload manifest.json on all requests so we reload latest compiled packs
+  cache_manifest: false
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+  compile: false
+  cache_manifest: true
