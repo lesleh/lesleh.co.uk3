@@ -2,7 +2,7 @@
 
 <div class="gallery">
   <% @photos.each do |photo| %>
-    <%= link_to url_for(photo.image), class: 'gallery__link' do %>
+    <%= link_to url_for(photo.image), class: ['gallery__link', "gallery__link--#{photo.thumbnail_size}"] do %>
       <%= image_tag url_for(photo.thumbnail), class: 'gallery__image' %>
     <% end %>
   <% end %>
