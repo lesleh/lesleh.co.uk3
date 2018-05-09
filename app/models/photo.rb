@@ -1,6 +1,10 @@
 class Photo < ApplicationRecord
   has_one_attached :image
 
+  scope :published, -> {
+    where.not(published_at: nil)
+  }
+
   enum thumbnail_size: {
     small: 0,
     medium: 1,
