@@ -1,0 +1,9 @@
+<h1>Photos</h1>
+
+<div class="gallery">
+  <% @photos.each do |photo| %>
+    <%= link_to url_for(photo.image), class: 'gallery__link' do %>
+      <%= image_tag url_for(photo.thumbnail), class: 'gallery__image' %>
+    <% end %>
+  <% end %>
+</div>
