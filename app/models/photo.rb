@@ -1,6 +1,10 @@
 class Photo < ApplicationRecord
   has_one_attached :image
 
+  scope :descending, -> {
+    order(created_at: :desc)
+  }
+
   scope :published, -> {
     where.not(published_at: nil)
   }
@@ -22,6 +26,6 @@ class Photo < ApplicationRecord
     if size.nil?
       raise StandardError, 'Unknown size'
     end
-    Photo.first.image.variant(resize: size).processed
+    image.variant(resize: size).processed
   end
 end
