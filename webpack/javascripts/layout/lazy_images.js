@@ -17,16 +17,18 @@ function handleIntersect (entries) {
 document.addEventListener('turbolinks:before-visit', function () {
   if (observer && observer.disconnect) {
     observer.disconnect()
+    observer = null
   }
 })
 
 document.addEventListener('turbolinks:load', function () {
-  var options = {
-    root: null
+  let lazyImages = document.querySelectorAll('img[data-lazy-load]')
+  if (lazyImages.length < 1) {
+    return
   }
 
-  observer = new window.IntersectionObserver(handleIntersect, options)
-  Array.from(document.querySelectorAll('img[data-lazy-load]')).forEach((e) => {
+  observer = new window.IntersectionObserver(handleIntersect, { root: null })
+  Array.from(lazyImages).forEach((e) => {
     observer.observe(e)
   })
 })
