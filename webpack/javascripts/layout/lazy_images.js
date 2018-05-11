@@ -14,7 +14,13 @@ function handleIntersect (entries) {
   })
 }
 
-window.addEventListener('load', function () {
+document.addEventListener('turbolinks:before-visit', function () {
+  if (observer && observer.disconnect) {
+    observer.disconnect()
+  }
+})
+
+document.addEventListener('turbolinks:load', function () {
   var options = {
     root: null
   }
