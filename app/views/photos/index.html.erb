@@ -3,7 +3,8 @@
 <div class="gallery">
   <% @photos.each do |photo| %>
     <%= link_to url_for(photo.image), class: ['gallery__link', "gallery__link--#{photo.thumbnail_size}"] do %>
-      <%= image_tag url_for(photo.thumbnail), class: 'gallery__image' %>
+      <%= image_tag '/images/placeholder.png', class: 'gallery__image', style: 'min-width: 100px; min-height: 100px',
+        data: {'lazy-load': '', 'lazy-load-src': url_for(photo.thumbnail)} %>
     <% end %>
   <% end %>
 </div>
