@@ -6,7 +6,7 @@ var observer
  * @param {HTMLImageElement} image
  */
 function loadImage (image) {
-  window.setTimeout(image.setAttribute('src', image.dataset.lazyLoadSrc), 2500, image)
+  window.setTimeout(() => image.setAttribute('src', image.dataset.lazyLoadSrc), 0)
 }
 
 function handleIntersect (entries) {
