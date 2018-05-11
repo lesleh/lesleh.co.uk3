@@ -14,8 +14,7 @@ let config = yaml.safeLoad(fs.readFileSync(configPath))[environment]
 module.exports = {
   context: path.join(__dirname, config.source_path),
   entry: {
-    app: './packs/app.js',
-    style: './packs/style.scss'
+    app: ['./packs/style.scss', './packs/app.js']
   },
   output: {
     path: path.join(__dirname, config.public_path, config.public_output_path),
