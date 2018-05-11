@@ -1,5 +1,3 @@
-/* global IntersectionObserver */
-
 var observer
 
 /**
@@ -10,23 +8,19 @@ function loadImage (image) {
 }
 
 function handleIntersect (entries) {
-  const visible = entries.filter((e) => e.isIntersecting)
-
-  visible.forEach(v => {
+  entries.filter((e) => e.isIntersecting).forEach(v => {
     observer.unobserve(v.target)
     loadImage(v.target)
   })
 }
 
-function createObserver () {
+window.addEventListener('load', function () {
   var options = {
     root: null
   }
 
-  observer = new IntersectionObserver(handleIntersect, options)
+  observer = new window.IntersectionObserver(handleIntersect, options)
   Array.from(document.querySelectorAll('img[data-lazy-load]')).forEach((e) => {
     observer.observe(e)
   })
-}
-
-window.addEventListener('load', createObserver)
+})
