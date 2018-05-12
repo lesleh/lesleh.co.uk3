@@ -4,6 +4,7 @@ const yaml = require('js-yaml')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 let environment = process.env.NODE_ENV || process.env.RACK_ENV || process.env.RAILS_ENV || 'development'
+let production = !['development', 'test'].includes(environment)
 let configPath = process.env.PACKER_CONFIG_PATH
 if (!configPath) {
   console.warn('PACKER_CONFIG path not set, defaulting to config/packer.yml')
@@ -18,7 +19,9 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, config.public_path, config.public_output_path),
-    publicPath: `/${config.public_output_path}/`
+    publicPath: `/${config.public_output_path}/`,
+    filename: production ? '[name]-[chunkhash].js' : '[name].js',
+    chunkFilename: production ? '[name]-[chunkhash].chunk.js' : '[name].chunk.js'
   },
   devServer: {
     port: 3035
@@ -40,7 +43,10 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|gif|svg|png)$/,
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          name: production ? '[path][name]-[hash].[ext]' : '[path][name].[ext]'
+        }
       }
     ]
   },
