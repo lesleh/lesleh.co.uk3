@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   private
 
   def get_photos
-    photos = Photo.descending
+    photos = Photo.descending.with_attached_image
     Rails.cache.fetch(photos) do
       photos.map do |photo|
         {
