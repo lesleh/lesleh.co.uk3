@@ -17,6 +17,8 @@ gem 'mini_magick', '~> 4.8'
 
 gem 'active_link_to'
 
+gem 'aws-sdk-s3', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'packer', github: 'simplybusiness/packer'
