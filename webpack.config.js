@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const CompressionPlugin = require("compression-webpack-plugin")
 
 let environment = process.env.NODE_ENV || process.env.RACK_ENV || process.env.RAILS_ENV || 'development'
 let production = !['development', 'test'].includes(environment)
@@ -51,6 +52,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ManifestPlugin({ writeToFileEmit: true })
+    new ManifestPlugin({ writeToFileEmit: true }),
+    new CompressionPlugin({
+      test: /\.(js|css|svg)$/
+    })
   ]
 }
