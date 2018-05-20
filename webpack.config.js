@@ -2,7 +2,8 @@ const path = require('path')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const ManifestPlugin = require('webpack-manifest-plugin')
-const CompressionPlugin = require("compression-webpack-plugin")
+const CompressionPlugin = require('compression-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 let environment = process.env.NODE_ENV || process.env.RACK_ENV || process.env.RAILS_ENV || 'development'
 let production = !['development', 'test'].includes(environment)
@@ -16,7 +17,8 @@ let config = yaml.safeLoad(fs.readFileSync(configPath))[environment]
 module.exports = {
   context: path.join(__dirname, config.source_path),
   entry: {
-    app: ['./packs/style.scss', './packs/app.js']
+    style: './packs/style.scss',
+    app: './packs/app.js'
   },
   output: {
     path: path.join(__dirname, config.public_path, config.public_output_path),
@@ -32,7 +34,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          { loader: 'style-loader' },
+          MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: true, importLoaders: true } }, // ,
           { loader: 'sass-loader', options: { sourceMap: true } }
         ]
@@ -52,6 +54,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: production ? '[name]-[hash].css' : '[name].css',
+      chunkFilename: production ? '[id]-[hash].css' : '[id].css'
+    }),
     new ManifestPlugin({ writeToFileEmit: true }),
     new CompressionPlugin({
       test: /\.(js|css|svg)$/
