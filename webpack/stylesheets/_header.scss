@@ -66,6 +66,7 @@
     padding-top: 50px;
     transform: translateX(-100%);
     opacity: 0;
+    transition: all 0.3s;
 
     a {
       text-align: center;
@@ -75,7 +76,6 @@
   }
 
   .main-nav.is-open {
-    transition: all 0.3s;
     transform: translateX(0%);
     opacity: 1;
   }
