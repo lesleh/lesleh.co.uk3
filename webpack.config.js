@@ -18,7 +18,8 @@ module.exports = {
   context: path.join(__dirname, config.source_path),
   entry: {
     style: './packs/style.scss',
-    app: './packs/app.js'
+    app: './packs/app.js',
+    intersection_observer: './packs/intersection_observer.js'
   },
   output: {
     path: path.join(__dirname, config.public_path, config.public_output_path),
