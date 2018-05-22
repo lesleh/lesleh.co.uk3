@@ -15,14 +15,8 @@
     <%= tag :meta, name: 'environment', content: Packer.env %>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
-
-    <script>
-    //if (!('IntersectionObserver' in window)) {
-      let scriptUrl = "<%= asset_pack_path('intersection_observer.js') %>";
-      document.write('<script src="' + scriptUrl + '"></s' + 'cript>')
-    //}
-    </script>
-
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,IntersectionObserver"></script>
+    
     <%= javascript_pack_tag 'app.js' %>
     <%= stylesheet_pack_tag 'style.css' %>
   </head>
