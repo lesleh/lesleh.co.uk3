@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: lesleh_co_uk3_development
+
+test:
+  <<: *default
+  database: lesleh_co_uk3_test
+
+production:
+  <<: *default
+  database: lesleh_co_uk3_developement
