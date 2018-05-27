@@ -1,12 +1,11 @@
 <header class="site-header">
   <h1><span>Lesleh</span>.co.uk</h1>
-  <button class="main-nav__hamburger"></button>
-  <nav class="main-nav">
-    <ul>
-      <li><%= active_link_to 'Home', root_path, active: :exclusive %></li>
-      <li><%= active_link_to 'About', '#', active: false %></li>
-      <li><%= active_link_to 'Photos', photos_path %></li>
-      <li><%= active_link_to 'Contact', '#', active: false %></li>
-    </ul>
-  </nav>
+  <button class="site-nav__hamburger"></button>
 </header>
+
+<ul class="site-nav">
+  <li><%= active_link_to 'Home', root_path, active: :exclusive %></li>
+  <li><%= active_link_to 'About', '#', active: false %></li>
+  <li><%= active_link_to 'Photos', photos_path %></li>
+  <li><%= active_link_to 'Contact', '#', active: false %></li>
+</ul>

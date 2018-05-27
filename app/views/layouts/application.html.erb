@@ -24,7 +24,8 @@
   <body>
     <div class="grid">
       <%= render 'layouts/header' %>
-      <main>
+      <h1 class="page-title"><%= @page_title %></h1>
+      <main class="site-main">
       <%= yield %>
       </main>
       <footer class="site-footer"></footer>
