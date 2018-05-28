@@ -1,0 +1,13 @@
+<h1>Message from Lesleh.co.uk contact form</h1>
+
+<p>
+  <strong>Name:</strong> <%= @contact_message.name %>
+</p>
+
+<p>
+  <strong>Email:</strong> <%= mail_to @contact_message.name %>
+</p>
+
+<p>
+  <strong>Message:</strong> <%= simple_format @contact_message.message %>
+</p>

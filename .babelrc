@@ -1,1 +1,7 @@
-{ "presets": ["env"] }
+{
+  "presets": [
+    ["env", {
+      "exclude": ["transform-regenerator"]
+    }]
+  ]
+}

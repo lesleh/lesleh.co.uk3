@@ -1,3 +1,4 @@
+import '../javascripts/contact/form'
 import '../javascripts/layout/lazy_images'
 import '../javascripts/layout/menu'
 import '../javascripts/layout/turbolinks'
