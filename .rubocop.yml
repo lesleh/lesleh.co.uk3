@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - node_modules/**/*
+    - public/**/*
+    - db/**/*
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Max: 27
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
+
