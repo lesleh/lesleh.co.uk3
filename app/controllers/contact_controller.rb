@@ -10,7 +10,7 @@ class ContactController < ApplicationController
 
   def create
     @contact_message = ContactMessage.new(contact_message_params)
-    if @contact_message.valid?
+    if @contact_message.valid? && verify_recaptcha
       ContactMessageMailer.contact(@contact_message).deliver_now
       redirect_to root_path, notice: 'Your message was sent'
     else

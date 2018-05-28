@@ -2,5 +2,6 @@
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :message, as: :text, input_html: { rows: 10} %>
+  <%= recaptcha_tags %>
   <%= f.button :submit, value: 'Send' %>
 <% end %>
