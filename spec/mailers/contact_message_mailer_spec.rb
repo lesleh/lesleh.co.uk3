@@ -1,17 +1,18 @@
 require "rails_helper"
 
 RSpec.describe ContactMessageMailer, type: :mailer do
-  describe "message" do
-    let(:mail) { ContactMessageMailer.message }
+  describe "contact" do
+    let(:contact_message) { ContactMessage.new }
+    let(:mail) { ContactMessageMailer.contact(contact_message) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("Message")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
+      expect(mail.subject).to eq('Lesleh.co.uk contact message')
+      expect(mail.to).to eq(['iam@lesleh.co.uk'])
+      expect(mail.from).to eq(['iam@lesleh.co.uk'])
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+      expect(mail.body.encoded).to match('Message')
     end
   end
 

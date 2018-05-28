@@ -3,7 +3,7 @@ class ContactMessageMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/contact_message_mailer/message
   def message
-    ContactMessageMailerMailer.message
+    ContactMessageMailerMailer.contact
   end
 
 end
