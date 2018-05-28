@@ -1,12 +1,16 @@
 .button,
 button,
 input[type='submit'] {
-  background-color: #fff;
-  color: #000;
+  color: var(--color-primary);
+  background-color: var(--color-primary-inverse);
   font-size: 16px;
   display: inline-block;
-  padding: 10px;
+  padding: var(--input-padding);
   border: 0;
+
+  @if $rounded-borders {
+    border-radius: var(--border-radius);
+  }
 
   &:hover {
     background-color: #ddd;
