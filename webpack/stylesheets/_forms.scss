@@ -1,0 +1,19 @@
+.form {
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+input:not([type]),
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  font-family: var(--font-family);
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: 0;
+}
