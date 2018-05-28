@@ -10,4 +10,13 @@ module ApplicationHelper
     title = "#{@page_title} - #{title}" if @page_title.present?
     content_tag :title, title
   end
+
+  def flash_class(level)
+    case level.to_sym
+      when :notice then 'alert alert-info'
+      when :success then 'alert alert-success'
+      when :error, :alert then 'alert alert-error'
+      else "alert-#{level}"
+    end
+  end
 end
