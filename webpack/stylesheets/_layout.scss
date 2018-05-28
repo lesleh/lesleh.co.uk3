@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: main;
 }
 
+.site-main :first-child {
+  margin-top: 0;
+}
+
 .site-footer {
   grid-area: footer;
 }

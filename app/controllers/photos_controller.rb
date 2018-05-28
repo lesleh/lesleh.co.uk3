@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
       photos.map do |photo|
         {
           photo: photo,
-          thumbnail: photo.thumbnail(size: photo.thumbnail_size.to_s)
+          thumbnail: photo.thumbnail(thumbnail_size: photo.thumbnail_size.to_s)
         }
       end
     end
