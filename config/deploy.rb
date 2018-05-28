@@ -1,8 +1,10 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+# frozen_string_literal: true
 
-set :application, "lesleh_co_uk3"
-set :repo_url, "git@github.com:lesleh/lesleh.co.uk3.git"
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.10.1'
+
+set :application, 'lesleh_co_uk3'
+set :repo_url, 'git@github.com:lesleh/lesleh.co.uk3.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -22,11 +24,11 @@ set :repo_url, "git@github.com:lesleh/lesleh.co.uk3.git"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
-append :linked_files, "config/master.key"
+append :linked_files, 'config/master.key'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-append :linked_dirs, "storage"
+append :linked_dirs, 'storage'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

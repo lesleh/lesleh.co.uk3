@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class Photo < ApplicationRecord
   has_one_attached :image
 
-  scope :descending, -> {
+  scope :descending, lambda {
     order(created_at: :desc)
   }
 
-  scope :published, -> {
+  scope :published, lambda {
     where.not(published_at: nil)
   }
 
@@ -19,13 +21,11 @@ class Photo < ApplicationRecord
     small: '250x250',
     medium: '500x500',
     large: '750x750'
-  }
+  }.freeze
 
-  def thumbnail(size: :small)
+  def thumbnail(thumbnail_size: :small)
     size = THUMBNAIL_SIZES[thumbnail_size.to_sym]
-    if size.nil?
-      raise StandardError, 'Unknown size'
-    end
+    raise StandardError, 'Unknown size' if size.nil?
     image.variant(resize: size).processed
   end
 end

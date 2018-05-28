@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'contact' => 'contact#new', as: :contact
   post 'contact' => 'contact#create'

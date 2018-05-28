@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 desc 'Restart app'
 task :restart do
   on(roles(:all)) do
     within release_path do
-      execute :rake, "restart"
+      execute :rake, 'restart'
     end
   end
 end

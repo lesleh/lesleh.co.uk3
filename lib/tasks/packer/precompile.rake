@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :packer do
   desc 'Compile all webpack assets'
   task :precompile do

@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class PhotosController < ApplicationController
   def index
     @page_title = 'Photos'
-    @photos = get_photos
+    @photos = photos
   end
 
   private
 
-  def get_photos
+  def photos
     photos = Photo.descending.with_attached_image
     Rails.cache.fetch(photos) do
       photos.map do |photo|

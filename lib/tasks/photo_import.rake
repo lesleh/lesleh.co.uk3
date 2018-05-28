@@ -1,4 +1,6 @@
-task :photo_import => :environment do
+# frozen_string_literal: true
+
+task photo_import: :environment do
   data = JSON.parse(IO.read('/home/ubuntu/photos/images.json'))
 
   data.each do |dat|
@@ -8,6 +10,6 @@ task :photo_import => :environment do
     puts "/home/ubuntu/photos/#{bn}"
     photo = Photo.create!(created_at: created_at, description: description)
     photo.image.attach(io: File.open("/home/ubuntu/photos/#{bn}"),
-                     filename: bn)
+                       filename: bn)
   end
 end
