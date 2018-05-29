@@ -1,15 +1,16 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.5.1
+  - 2.4.4
+  - 2.5.1
 env:
   secure: P3YMCUIvh4BwEf7IJfh1cLS90EzyiZnRBlL2dOFNwNPe0urXr22ZCHcS/pRiS7SxrJ5jkvHFgrWwO9jegR756dW/yDXfXF8wBCI7CnZAWLhkgZMaKUqj1jW2ex4P8PzoeYTZkeh2YQMIp/W/pwmNjuwAz/TkezCU+bTC5FbTc/+WIXx6DoM76xgAWGw8v9Yt3Pigtb5FHLemhHCYILe6gT4zcYcPIv3Dx0Wjp+lK4rcssjwo4YPslBFNgkcbN0aYq+vtKPfpNNPzduI7ry4af+JjDEXm5RWB2j8oqu2+kmV/LltLe7hJCcg3eoPKOAsr50Hax30ro9KxzpnfixY2jUAP+ZFS2x9CO7svcz7NxP91mHykc6MTP3QmIpRdDDdtTG/JlklOQQKWkH/bgF/+Gq3ojfw0ixwPo6WCSP/F5nEogshChJ7UTWmE8W+PQVgKEpDEJNzeAEwy4p3MmT4LA6XaImTqi+INQyJDkIg0cX2o8HXcGmks0RtQ0QS1Lm3h00hGMwNpXDymdyUGNqZ9ibtmgFSCSCdqtjyM40sjeJi9/b+WFZKVqi/AjpD9zKLfTK5N0BlZ8laCSnT7bkvLcUUx5ieWtqvgF+8cMLjgN+7qogXT43ZLi2cw68FK4sqcHVPf9ZRXxjh8rryeM+AOKXDvg6YDnnnaB9yCHxFzt50=
 services:
-- postgresql
+  - postgresql
 script:
-- RAILS_ENV=test bundle exec rake db:migrate --trace
-- bundle exec rake db:test:prepare
-- bundle exec rake
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
 before_script:
-- cp config/database.yml.travis config/database.yml
-- psql -c 'create database lesleh_co_uk3_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database lesleh_co_uk3_test;' -U postgres
