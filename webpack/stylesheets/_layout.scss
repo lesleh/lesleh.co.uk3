@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
                         "header  page-title"
                         "nav     main"
                         ".       main"
-                        "footer  footer";
+                        ".       footer";
   }
 }
 
@@ -50,7 +50,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav {
   grid-area: nav;
-  min-height: 400px;
   display: flex;
   flex-direction: column;
 }

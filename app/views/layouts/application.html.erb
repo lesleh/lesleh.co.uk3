@@ -19,6 +19,10 @@
 
     <%= javascript_pack_tag 'app.js' %>
     <%= stylesheet_pack_tag 'style.css' %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" integrity="sha384-EWu6DiBz01XlR6XGsVuabDMbDN6RT8cwNoY+3tIH+6pUCfaNldJYJQfQlbEIWLyA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
   </head>
 
   <body>
@@ -29,7 +33,11 @@
         <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </main>
-      <footer class="site-footer"></footer>
+      <footer class="site-footer">
+        <a class="github-link" href="https://github.com/lesleh/lesleh.co.uk3/" title="View source on GitHub">
+          <i class="fab fa-github-alt"></i>
+        </a>
+      </footer>
     </div>
   </body>
 </html>
