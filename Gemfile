@@ -23,6 +23,8 @@ gem 'aws-sdk-s3', require: false
 
 gem 'simple_form'
 
+gem 'whenever', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'packer', github: 'simplybusiness/packer'
