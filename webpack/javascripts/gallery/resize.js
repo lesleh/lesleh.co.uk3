@@ -2,6 +2,7 @@
 
 function photoClicked (e) {
   e.preventDefault()
+  e.stopPropagation()
 
   let element = e.currentTarget
 
