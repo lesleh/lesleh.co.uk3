@@ -2,7 +2,7 @@
   <% @photos.each do |photo| %>
     <%= link_to url_for(photo[:photo].image),
       class: ['js-gallery-link', 'gallery__link', "gallery__link--#{photo[:photo].thumbnail_size}"],
-      data: { lightbox: 'photos', title: photo[:photo].description } do %>
+      data: { lightbox: 'photos', id: photo[:photo].id, title: photo[:photo].description } do %>
       <%= image_tag '/images/placeholder.png', class: 'gallery__image', style: "min-width: 100px; min-height: 100px",
         data: {
           'lazy-load': '',
