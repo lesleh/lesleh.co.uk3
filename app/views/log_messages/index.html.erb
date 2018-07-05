@@ -1,0 +1,22 @@
+<% @page_title = 'Log Messages' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date/Time</th>
+      <th>Severity</th>
+      <th>Label</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @log_messages.each do |log_message| %>
+      <tr>
+        <td><%= log_message.created_at.to_formatted_s(:short) %></td>
+        <td><%= log_message.severity %></td>
+        <td><%= log_message.label %></td>
+        <td><%= log_message.message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
