@@ -2,6 +2,7 @@
   "name": "lesleh_co_uk3",
   "private": true,
   "scripts": {
+    "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development"
   },
   "dependencies": {

@@ -9,4 +9,4 @@ task :packer_precompile do
   end
 end
 
-after 'yarn:install', :packer_precompile
+after 'npm:install', :packer_precompile
