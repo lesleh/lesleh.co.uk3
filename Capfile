@@ -8,7 +8,7 @@ require 'capistrano/deploy'
 
 require 'capistrano/rails'
 require 'capistrano/passenger'
-require 'capistrano/yarn'
+require 'capistrano/npm'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'whenever/capistrano'
