@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "exclude": ["transform-regenerator"]
     }]
   ]
