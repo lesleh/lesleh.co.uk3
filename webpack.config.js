@@ -26,6 +26,9 @@ module.exports = {
     filename: production ? '[name]-[chunkhash].js' : '[name].js',
     chunkFilename: production ? '[name]-[chunkhash].chunk.js' : '[name].chunk.js'
   },
+  resolve: {
+    extensions: ['.js', '.ts']
+  },
   devServer: {
     port: 3035
   },
@@ -40,7 +43,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.jsx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /\/node_modules\//,
         loader: 'babel-loader'
       },
