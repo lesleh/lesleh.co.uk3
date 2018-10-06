@@ -1,7 +1,7 @@
 <div class="gallery">
   <% @photos.each do |photo| %>
     <%= link_to url_for(photo[:photo].image),
-      class: ['js-gallery-link', 'gallery__link', "gallery__link--#{photo[:photo].thumbnail_size}"],
+      class: ['js-gallery-link', 'gallery__link', "gallery__link--#{photo[:photo].thumbnail_size}", 'glightbox'],
       data: { lightbox: 'photos', id: photo[:photo].id, title: photo[:photo].description } do %>
       <%= image_tag '/images/placeholder.png', class: 'gallery__image', style: "min-width: 100px; min-height: 100px",
         data: {
@@ -12,13 +12,3 @@
     <% end %>
   <% end %>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox-plus-jquery.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" />
-<script>
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    'disableScrolling': true
-  })
-</script>
