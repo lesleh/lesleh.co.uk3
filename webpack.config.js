@@ -4,6 +4,7 @@ const yaml = require('js-yaml')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 let environment = process.env.NODE_ENV || process.env.RACK_ENV || process.env.RAILS_ENV || 'development'
 let production = !['development', 'test'].includes(environment)
@@ -54,6 +55,17 @@ module.exports = {
           name: production ? '[path][name]-[hash].[ext]' : '[path][name].[ext]'
         }
       }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyWebpackPlugin({
+        uglifyOptions: {
+          compress: {
+            collapse_vars: false
+          }
+        }
+      })
     ]
   },
   plugins: [
