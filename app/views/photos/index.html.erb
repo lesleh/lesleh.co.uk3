@@ -2,13 +2,9 @@
   <% @photos.each do |photo| %>
     <%= link_to url_for(photo[:photo].image),
       class: ['js-gallery-link', 'gallery__link', "gallery__link--#{photo[:photo].thumbnail_size}", 'glightbox'],
-      data: { lightbox: 'photos', id: photo[:photo].id, title: photo[:photo].description } do %>
+      data: photo_link_data(photo) do %>
       <%= image_tag '/images/placeholder.png', class: 'gallery__image', style: "min-width: 100px; min-height: 100px",
-        data: {
-          'lazy-load': '',
-          'lazy-load-src': url_for(photo[:thumbnail]),
-          'description': photo[:photo].description
-        } %>
+        data: photo_image_data(photo) %>
     <% end %>
   <% end %>
 </div>
