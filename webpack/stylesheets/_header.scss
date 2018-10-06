@@ -11,19 +11,24 @@
 }
 
 .site-nav__hamburger {
-  width: 20px;
-  height: 20px;
+  font-size: 24px;
+  color: var(--color-primary-inverse);
   position: absolute;
-  top: 15px;
-  right: 17px;
+  top: 2px;
+  right: 2px;
   border: 0;
   z-index: 5;
-  background-image: url('../images/layout/hamburger--white.svg');
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   outline: 0;
   cursor: pointer;
+
+  &:hover, &:active, &:focus {
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
 
   @media (min-width: 576px) {
     display: none;
