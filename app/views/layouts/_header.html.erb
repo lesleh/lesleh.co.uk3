@@ -4,8 +4,24 @@
 </header>
 
 <ul class="site-nav">
-  <li><%= active_link_to 'Home', root_path, active: :exclusive %></li>
-  <li><%= active_link_to 'About', about_path %></li>
-  <li><%= active_link_to 'Photos', photos_path %></li>
-  <li><%= active_link_to 'Contact', contact_path %></li>
+  <li>
+    <%= active_link_to root_path, active: :exclusive do %>
+      Home <i class="fas fa-fw fa-home"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= active_link_to about_path do %>
+      About <i class="fas fa-fw fa-user-circle"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= active_link_to photos_path do %>
+      Photos <i class="fas fa-fw fa-images"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= active_link_to contact_path do %>
+      Contact <i class="fas fa-fw fa-envelope"></i>
+    <% end %>
+  </li>
 </ul>
