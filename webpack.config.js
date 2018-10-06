@@ -17,6 +17,7 @@ let config = yaml.safeLoad(fs.readFileSync(configPath))[environment]
 
 module.exports = {
   context: path.join(__dirname, config.source_path),
+  devtool: production ? 'source-map' : 'eval-source-map',
   entry: {
     style: './packs/style.scss',
     app: './packs/app.js'
@@ -28,7 +29,7 @@ module.exports = {
     chunkFilename: production ? '[name]-[chunkhash].chunk.js' : '[name].chunk.js'
   },
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts', '.jsx', '.tsx']
   },
   devServer: {
     port: 3035
