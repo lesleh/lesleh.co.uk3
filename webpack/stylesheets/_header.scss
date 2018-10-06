@@ -46,10 +46,6 @@
   font-weight: 300;
   @include size-lock(font-size, 14px, 19.2px);
 
-  .svg-inline--fa {
-    margin-left: 0.3em;
-  }
-
   &.active, &:hover {
     font-weight: bold;
   }

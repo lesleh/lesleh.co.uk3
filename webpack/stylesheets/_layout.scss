@@ -33,8 +33,8 @@ h1, h2, h3, h4, h5, h6 {
                       "footer";
 
   @media (min-width: 576px) {
-    @include size-lock(grid-row-gap, 10px, 20px);
-    @include size-lock(grid-column-gap, 20px, 40px);
+    @include size-lock(grid-row-gap, 20px, 30px);
+    @include size-lock(grid-column-gap, 30px, 40px);
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
                         "header  page-title"
