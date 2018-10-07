@@ -5,8 +5,8 @@ export interface ICellProps {
 }
 
 export default class Cell extends React.PureComponent<ICellProps> {
-  defaultProps = {
-    span: 1
+  static defaultProps = {
+    span: 12
   }
 
   createClassName () {
