@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import dig from './dig';
 
 type ComponentTree = {
@@ -18,7 +17,7 @@ const REACT_APP_SELECTOR = '[data-react-app]'
  * @param element An HTMLElement with data-react-app and (optionally) data-react-props set
  * @param components An object containing a tree of components to search
  */
-const mountComponent = function (element: HTMLElement, components: ComponentTree) {
+const mountComponent = async function (element: HTMLElement, components: ComponentTree) {
   const appName = element.dataset.reactApp;
 
   if (!appName) {
@@ -34,6 +33,7 @@ const mountComponent = function (element: HTMLElement, components: ComponentTree
     return;
   }
 
+  const { render } = await import('react-dom');
   render(React.createElement(app, props), element);
 };
 
@@ -49,7 +49,8 @@ const mountComponents = function (rootElement: HTMLElement | Document, component
   });
 };
 
-const unmountComponents = function (rootElement: HTMLElement | Document, components: any) {
+const unmountComponents = async function (rootElement: HTMLElement | Document, components: any) {
+  const { unmountComponentAtNode } = await import('react-dom');
   Array.from(rootElement.querySelectorAll(REACT_APP_SELECTOR)).forEach((element) => {
     unmountComponentAtNode(element)
   });
