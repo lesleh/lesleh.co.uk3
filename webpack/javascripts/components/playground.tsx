@@ -18,13 +18,13 @@ export default class Playground extends React.Component<any, IPlaygroundState> {
   render () {
     return (
       <Grid>
-        <Grid.Column>
+        <Grid.Cell>
           <div className="input">
             <label>Input</label>
             <input value={this.state.name} onChange={this.handleInputChange}/>
           </div>
           <div>{this.state.name}</div>
-        </Grid.Column>
+        </Grid.Cell>
       </Grid>
     )
   }
