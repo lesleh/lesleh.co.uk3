@@ -4,7 +4,7 @@
       class: ['js-gallery-link', 'gallery__link', "gallery__link--#{photo[:photo].thumbnail_size}", 'glightbox'],
       data: photo_link_data(photo) do %>
       <%= image_tag '/images/placeholder.png', class: 'gallery__image', style: "min-width: 100px; min-height: 100px",
-        data: photo_image_data(photo) %>
+        data: photo_image_data(photo), alt: '' %>
     <% end %>
   <% end %>
 </div>
