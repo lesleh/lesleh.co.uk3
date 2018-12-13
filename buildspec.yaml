@@ -4,6 +4,7 @@ env:
     variables:
         RAILS_ENV: "production"
         BUNDLE_PATH: '/bundle'
+        GEM_PATH: '/bundle'
     parameter-store:
         build_ssh_key: "build_ssh_key"
 
