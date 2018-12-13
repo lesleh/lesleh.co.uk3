@@ -3,8 +3,6 @@ version: 0.2
 env:
     variables:
         RAILS_ENV: "production"
-        BUNDLE_PATH: '/root/bundle'
-        GEM_PATH: '/root/bundle'
     parameter-store:
         build_ssh_key: "build_ssh_key"
 
@@ -24,7 +22,7 @@ phases:
         # # Install node dependancies.
         # - npm ci
         # Install bundler dependencies
-        - bundle install
+        - bundle install --deployment
 
     build:
         commands:
@@ -41,7 +39,7 @@ phases:
 
 cache:
     paths:
-        - '/root/bundle/**/*'
+        - 'vendor/bundle/**/*'
         - 'node_modules/**/*'
 
 # artifacts:
