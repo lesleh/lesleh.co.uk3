@@ -3,27 +3,30 @@ version: 0.2
 env:
     variables:
         RAILS_ENV : "production"
+    parameter-store:
+        build_ssh_key: "build_ssh_key"
 
 phases:
     install:
         commands:
+        - mkdir -p ~/.ssh
+        - echo "$build_ssh_key" > ~/.ssh/id_rsa
+        - chmod 600 ~/.ssh/id_rsa
         # Download and Install NodeJS 8.0     
-        - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-        - sudo apt-get install -y nodejs
-        - echo Installing source NPM dependencies...
-        # Install http drivers for node
-        - sudo apt-get update -y
-        - sudo apt-get install -y apt-transport-https
-        # Install node dependancies.
-        - npm ci
+        # - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+        # - sudo apt-get install -y nodejs
+        # - echo Installing source NPM dependencies...
+        # # Install http drivers for node
+        # - sudo apt-get update -y
+        # - sudo apt-get install -y apt-transport-https
+        # # Install node dependancies.
+        # - npm ci
         # Install bundler dependencies
         - bundle install
 
-#     build:
-#         commands:
-#         # Builds Angular application. You can also build using custom environment here like mock or staging
-#         # - echo Build started on `date`
-#         # - ng build --${BUILD_ENV}
+    build:
+        commands:
+        - bundle exec cap production deploy
 
 #     post_build:
 #         commands:
