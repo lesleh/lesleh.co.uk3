@@ -7,6 +7,8 @@ default: &default
 
 development:
   <<: *default
+  host: db
+  username: postgres
   database: lesleh_co_uk3_development
 
 # Warning: The database defined as "test" will be erased and
