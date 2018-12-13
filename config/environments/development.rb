@@ -16,6 +16,8 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :inline
 
+  config.web_console.whitelisted_ips = '172.20.0.1'
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
