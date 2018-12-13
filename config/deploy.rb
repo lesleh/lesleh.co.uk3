@@ -5,6 +5,7 @@ lock '~> 3.10.1'
 
 set :application, 'lesleh_co_uk3'
 set :repo_url, 'git@github.com:lesleh/lesleh.co.uk3.git'
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
