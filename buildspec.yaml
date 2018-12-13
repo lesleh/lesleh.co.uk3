@@ -3,8 +3,8 @@ version: 0.2
 env:
     variables:
         RAILS_ENV: "production"
-        BUNDLE_PATH: '/bundle'
-        GEM_PATH: '/bundle'
+        BUNDLE_PATH: '/root/bundle'
+        GEM_PATH: '/root/bundle'
     parameter-store:
         build_ssh_key: "build_ssh_key"
 
