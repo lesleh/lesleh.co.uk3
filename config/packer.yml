@@ -5,6 +5,7 @@ default: &default
   source_entry_path: packs
   public_path: public
   public_output_path: packs
+  dev_server_host: webpack
   cache_path: tmp/cache/packer
   compile: true
 

@@ -27,7 +27,7 @@ gem 'whenever', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'packer', github: 'simplybusiness/packer'
+gem 'packer', github: 'simplybusiness/packer', branch: 'configurable-host'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

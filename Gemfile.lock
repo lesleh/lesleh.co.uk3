@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/simplybusiness/packer.git
-  revision: a45f944caf742606661d35ee5bc261cbb658a5c4
+  revision: 750d11431418e1a89315ec0fcde508c9ac6adbf4
+  branch: configurable-host
   specs:
-    packer (0.5.0)
+    packer (0.5.1)
       activesupport (~> 5)
       rack-proxy (~> 0.6.4)
 

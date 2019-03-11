@@ -1,0 +1,12 @@
+FROM node:10
+RUN mkdir /app
+WORKDIR /app
+
+EXPOSE 3035
+
+# Webpack assets
+COPY package.json yarn.lock webpack.config.js .babelrc /app/
+COPY webpack /app/webpack
+COPY config/packer.yml /app/config/packer.yml
+RUN yarn install
+RUN yarn run build
