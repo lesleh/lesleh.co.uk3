@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.6
 ENV RAILS_ENV=development
 RUN apt-get install -y gcc g++ make
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
