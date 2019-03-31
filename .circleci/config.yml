@@ -26,7 +26,16 @@ jobs:
       - restore_cache:
           keys:
             - lesleh.co.uk3-{{ checksum "Gemfile.lock" }}
-            - lesleh.co.uk3-
+
+      # Restore yarn cache
+      - restore_cache:
+          keys:
+            - lesleh.co.uk3-yarn-{{ checksum "yarn.lock" }}
+
+      # Yarn install dependencies
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
 
       # Bundle install dependencies
       - run:
@@ -40,6 +49,12 @@ jobs:
           key: lesleh.co.uk3-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+
+      # Store yarn cache
+      - save_cache:
+          key: lesleh.co.uk3-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
 
       - run:
           name: Database Setup
