@@ -71,15 +71,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            Rails.application.credentials.gmail[:username],
-    password:             Rails.application.credentials.gmail[:password],
-    authentication:       :plain,
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :aws_sdk
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
